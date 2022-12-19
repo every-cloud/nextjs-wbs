@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from './components/layout'
@@ -15,6 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+<<<<<<< HEAD
 
  
       <Link href="/create">
@@ -206,6 +208,10 @@ export default function Home() {
 
 
 
+=======
+      <h1> 홈입니다</h1>
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+>>>>>>> 0527701bc331f23c991ddecd2ff8d20e33ae9e0b
     </Layout>
-  )
+  );
 }
