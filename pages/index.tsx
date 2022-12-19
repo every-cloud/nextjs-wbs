@@ -2,6 +2,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from './components/layout'
+=======
+import Head from "next/head";
+import Layout from "./components/layout";
+>>>>>>> 0527701bc331f23c991ddecd2ff8d20e33ae9e0b
 
 
 
