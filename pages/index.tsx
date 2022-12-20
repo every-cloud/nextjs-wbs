@@ -1,44 +1,54 @@
-<<<<<<< HEAD
+import React, { useState, useEffect } from 'react'
+import {db} from './firebase/firebase-config'
+import {query, collection, onSnapshot} from 'firebase/firestore'
+
+
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from './components/layout'
-=======
-import Head from "next/head";
-import Layout from "./components/layout";
->>>>>>> 0527701bc331f23c991ddecd2ff8d20e33ae9e0b
+import { setHttpClientAndAgentOptions } from 'next/dist/server/config'
 
 
+// Create todo
+// Read todo from firebase
+// Update todo in firebase
+// Delete todo
 
+
+const style = {
+  thead : 'bg-gray-100 border-b border-gray-200 px-4 py-2',
+  thead_right : 'bg-gray-100 border-b border-gray-200 px-4 py-2 text-right'
+}
 
 
 export default function Home() {
   return (
+
     <Layout>
       <Head>
         <title>제목표시줄 입니다</title>
-        <meta name="description" content="WBS 만들자!" />
+
+
+       <meta name="description" content="설명입니다" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-<<<<<<< HEAD
 
  
       <Link href="/create">
               <button> 글쓰기 </button>
       </Link>
 
-
       <div className="p-24">
         <div className="overflow-x-auto bg-white rounded-lg shadow overflow-y-auto relative">
           <table className="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative text-gray-600">
             <thead>
               <tr className="text-left text-gray-400 text-xs">
-                <th className="bg-gray-100 border-b border-gray-200 px-4 py-2"> 서비스구분 </th>
-                <th className="bg-gray-100 border-b border-gray-200 px-4 py-2"> 프로젝트명 </th>
-                <th className="bg-gray-100 border-b border-gray-200 px-4 py-2"> 오픈일 </th>
-                <th className="bg-gray-100 border-b border-gray-200 px-4 py-2"> 스펙 </th>
-                <th className="bg-gray-100 border-b text-right border-gray-200 px-4 py-2"> 개발유무 </th>
-                <th className="bg-gray-100 border-b text-right border-gray-200 px-4 py-2"> Action </th>          
+                <th className={style.thead}> 서비스구분 </th>
+                <th className={style.thead}> 프로젝트명 </th>
+                <th className={style.thead}> 오픈일 </th>
+                <th className={style.thead}> 스펙 </th>
+                <th className={style.thead_right}> 개발유무 </th>
+                <th className={style.thead_right} > Action </th>          
 
               </tr>
             </thead>
@@ -56,7 +66,7 @@ export default function Home() {
                 </td>
                 <td className="border-dashed border-t border-gray-200 px-4 py-2 text-xs">
                   <span className="flex items-center text-gray-400 justify-end">
-                    <svg viewBox="0 0 24 24" className="w-3 h-3 mr-2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" className="w-3 h-3 mr-2" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10"></circle>
                       <polyline points="12 6 12 12 16 14"></polyline>
                     </svg> 16h 00min </span>
@@ -79,7 +89,7 @@ export default function Home() {
                 </td>
                 <td className="border-dashed border-t border-gray-200 px-4 py-2 text-xs">
                   <span className="flex items-center text-gray-400 justify-end">
-                    <svg viewBox="0 0 24 24" className="w-3 h-3 mr-2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" className="w-3 h-3 mr-2" stroke="currentColor" strokeWidth="2" fill="none" lroke-linecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10"></circle>
                       <polyline points="12 6 12 12 16 14"></polyline>
                     </svg> 26h 30min </span>
@@ -102,7 +112,7 @@ export default function Home() {
                 </td>
                 <td className="border-dashed border-t border-gray-200 px-4 py-2 text-xs">
                   <span className="flex items-center text-gray-400 justify-end">
-                    <svg viewBox="0 0 24 24" className="w-3 h-3 mr-2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" className="w-3 h-3 mr-2" stroke="currentColor" strokeWidth="2" fill="none" lroke-linecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10"></circle>
                       <polyline points="12 6 12 12 16 14"></polyline>
                     </svg> 12h 30min </span>
@@ -125,7 +135,7 @@ export default function Home() {
                 </td>
                 <td className="border-dashed border-t border-gray-200 px-4 py-2  text-xs">
                   <span className="flex items-center text-gray-400 justify-end">
-                    <svg viewBox="0 0 24 24" className="w-3 h-3 mr-2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" className="w-3 h-3 mr-2" stroke="currentColor" strokeWidth="2" fill="none" lroke-linecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10"></circle>
                       <polyline points="12 6 12 12 16 14"></polyline>
                     </svg> 14h 30min </span>
@@ -148,7 +158,7 @@ export default function Home() {
                 </td>
                 <td className="border-dashed border-t border-gray-200 px-4 py-2  text-xs">
                   <span className="flex items-center text-gray-400 justify-end">
-                    <svg viewBox="0 0 24 24" className="w-3 h-3 mr-2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" className="w-3 h-3 mr-2" stroke="currentColor" strokeWidth="2" fill="none" lroke-linecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10"></circle>
                       <polyline points="12 6 12 12 16 14"></polyline>
                     </svg> 84h 30min </span>
@@ -171,7 +181,7 @@ export default function Home() {
                 </td>
                 <td className="border-dashed border-t border-gray-200 px-4 py-2 text-xs">
                   <span className="flex items-center text-gray-400 justify-end">
-                    <svg viewBox="0 0 24 24" className="w-3 h-3 mr-2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" className="w-3 h-3 mr-2" stroke="currentColor" strokeWidth="2" fill="none" lroke-linecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10"></circle>
                       <polyline points="12 6 12 12 16 14"></polyline>
                     </svg> 26h 30min </span>
@@ -194,7 +204,7 @@ export default function Home() {
                 </td>
                 <td className="border-dashed border-t border-gray-200 px-4 py-2">
                   <span className="flex items-center text-gray-400 justify-end text-xs">
-                    <svg viewBox="0 0 24 24" className="w-3 h-3 mr-2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" className="w-3 h-3 mr-2" stroke="currentColor" strokeWidth="2" fill="none" lroke-linecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10"></circle>
                       <polyline points="12 6 12 12 16 14"></polyline>
                     </svg> 26h 30min </span>
@@ -211,11 +221,6 @@ export default function Home() {
 </div>
 
 
-
-=======
-      <h1> 홈입니다</h1>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
->>>>>>> 0527701bc331f23c991ddecd2ff8d20e33ae9e0b
-    </Layout>
+   </Layout>
   );
 }
