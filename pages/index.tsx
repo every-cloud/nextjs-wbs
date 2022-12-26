@@ -6,6 +6,7 @@ import {query, collection, onSnapshot} from 'firebase/firestore'
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from './components/layout'
+import Modal from './components/modal'
 import { setHttpClientAndAgentOptions } from 'next/dist/server/config'
 
 
@@ -22,6 +23,7 @@ const style = {
 
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(false);
   return (
 
     <Layout>
@@ -38,18 +40,24 @@ export default function Home() {
       <div>
 
         {/* 프로젝트 추가 버튼 */}
-        <Link href="/create">
-          <button type="button" className="inline-block px-5 py-1 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded
-                    hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
 
+          <button onClick={()=>setShowModal(true)} type="button" className="inline-block px-5 py-1 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded
+                    hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
               <span className="flex items-center justify-end">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>프로젝트 추가
               </span>
           </button>
-        </Link>
+
+      <Modal isVisible={showModal} onClose={()=>setShowModal(false)} />
+
       </div>
+
+
+
+
+      
 
     <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
       <div
