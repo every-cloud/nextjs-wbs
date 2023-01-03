@@ -1,6 +1,4 @@
-import React from 'react'
-
-const Modal = ({isVisible, onClose, children}) => {
+export default function Modal ({ isVisible, onClose, children }) {
     if(!isVisible) return null;
 
 
@@ -23,4 +21,3 @@ const Modal = ({isVisible, onClose, children}) => {
     )
 }
 
-export default Modal
