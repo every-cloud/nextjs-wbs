@@ -1,5 +1,6 @@
 import Layout from './components/layout'
 import { TOKEN, DATABASE_ID } from '../config'
+import ProjectItem from './components/projects/project-item'
 
 export default function Project({projects}) {
 
@@ -11,7 +12,7 @@ export default function Project({projects}) {
        <h1> 총 프로젝트 : { projects.results.length }</h1>
 
         {projects.results.map((aProject) => (
-         <h1> {aProject.properties.Name.title[0].plain_text}</h1>
+         <ProjectItem key={aProject.id} data={aProject}/>
         ))}
 
         </Layout>
@@ -20,12 +21,13 @@ export default function Project({projects}) {
 
 /*  빌드 타임에 호출  */
 export async function getStaticProps() {
+
     const options = {
         method: 'POST',
         headers: {
-          accept: 'application/json',
+          Accept: 'application/json',
           'Notion-Version': '2022-06-28',
-          'content-type': 'application/json',
+          'Content-type': 'application/json',
           Authorization: `Bearer ${TOKEN}`
         },
         body: JSON.stringify({
