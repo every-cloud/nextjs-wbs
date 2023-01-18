@@ -295,11 +295,16 @@ export default function Wbs() {
               <td className="px-5 py-2 border-b border-gray-200 bg-white text-sm">
                 <div className="flex">
                   <div className="flex-shrink-0 w-7 h-7">
+
+                  {/* img 
                     <img
                       className="w-full h-full rounded-full"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
                       alt=""
                     />
+                  */}
+
+
                   </div>
                   <div className="ml-2">
                     <p className="text-gray-900 whitespace-no-wrap">
@@ -378,11 +383,16 @@ export default function Wbs() {
               <td className="px-5 py-2 border-b border-gray-200 bg-white text-sm">
                 <div className="flex">
                   <div className="flex-shrink-0 w-7 h-7">
+
+                {/* img 
                     <img
                       className="w-full h-full rounded-full"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
                       alt=""
                     />
+                */}
+
+
                   </div>
                   <div className="ml-2">
                     <p className="text-gray-900 whitespace-no-wrap">
@@ -544,11 +554,15 @@ export default function Wbs() {
               <td className="px-5 py-2 border-b border-gray-200 bg-white text-sm">
                 <div className="flex">
                   <div className="flex-shrink-0 w-7 h-7">
+
+                  {/* img 
                     <img
                       className="w-full h-full rounded-full"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
                       alt=""
                     />
+                */}
+
                   </div>
                   <div className="ml-2">
                     <p className="text-gray-900 whitespace-no-wrap">
@@ -627,11 +641,16 @@ export default function Wbs() {
               <td className="px-5 py-2 border-b border-gray-200 bg-white text-sm">
                 <div className="flex">
                   <div className="flex-shrink-0 w-7 h-7">
+
+
+               {/* img 
                     <img
                       className="w-full h-full rounded-full"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
                       alt=""
                     />
+              */}
+
                   </div>
                   <div className="ml-2">
                     <p className="text-gray-900 whitespace-no-wrap">
