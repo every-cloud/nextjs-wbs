@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.project-card {
+    @apply flex flex-col m-3 rounded-xl w-full
+            transition duration-300 transform border border-gray-300
+            hover:scale-105 hover:shadow-lg dark:hover:text-blue-600
+            dark:border-gray-200/50
+}   
