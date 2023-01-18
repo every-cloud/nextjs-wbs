@@ -25,10 +25,7 @@ export default function Header() {
                         <div className="mr-5 hover:text-gray-900">
                             Components</div>
                     </Link>
-                    <Link href="/wbs">
-                        <div className="mr-5 hover:text-gray-900">
-                            WBS</div>
-                    </Link>
+
                     <Link href="/wbs">
                         <div className="mr-5 hover:text-gray-900">
                             About</div>
