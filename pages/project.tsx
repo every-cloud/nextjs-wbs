@@ -3,7 +3,7 @@ import Layout from './components/layout'
 import { TOKEN, DATABASE_ID } from '../config'
 import ProjectItem from './components/projects/project-item'
 
-export default function Project({projects}) {
+export default function Project({projects} :{projects:any}) {
 
 
     return (
@@ -24,7 +24,7 @@ export default function Project({projects}) {
             </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 m-6 py-10">
-              {projects.results.map((aProject) => (
+              {projects.results.map((aProject:any) => (
               <ProjectItem key={aProject.id} data={aProject}/>
               ))}
           </div>
@@ -59,14 +59,7 @@ export async function getStaticProps() {
       const res = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ID}/query`, options)
       const projects = await res.json()
       
-     
-
-      const projectNames = projects.results.map((aProject) => (
-          aProject.properties.Name.title[0].plain_text
-      ))
-
-    
-   
+  
 
 
     return {
